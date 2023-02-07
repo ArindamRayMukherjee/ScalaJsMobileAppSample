@@ -1,5 +1,6 @@
 package com.danceapp
 
+import com.danceapp.ReactNavigationFacadeJSImports.{NavigationContainer, TabNavigator, TabScreen}
 import slinky.core._
 import slinky.core.annotations.react
 import slinky.native._
@@ -23,24 +24,11 @@ import slinky.core.facade.ReactElement
   )
 
   override def render(): ReactElement = {
-
-    View(
-      style = baseStyle
-    )(
-      Image(
-        source = ImageURISource(
-          uri = "https://raw.githubusercontent.com/shadaj/slinky/master/logo.png"
-        ),
-        style = literal(
-          width = 250,
-          height = 250,
-          borderRadius = 250 / 2
-        ),
-        resizeMode = "cover"
-      ),
-      Text(
-        style = literal(fontSize = 30, color = "red")
-      )(s"Hello, Slinky!")
+//    BlankScreen("AAA")
+    NavigationContainer(
+      TabNavigator(
+        TabScreen(name = "AAAA", component = BlankScreen("AAAA"))
+      )
     )
   }
 
