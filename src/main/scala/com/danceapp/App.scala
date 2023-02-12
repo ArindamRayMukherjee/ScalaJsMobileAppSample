@@ -23,11 +23,22 @@ import slinky.core.facade.ReactElement
     alignItems = "center"
   )
 
+  @react object Wrapper1 {
+    val component = FunctionalComponent[Unit] { _ =>
+      BlankScreen("AAA")
+    }
+  }
+  @react object Wrapper2 {
+    val component = FunctionalComponent[Unit] { _ =>
+      BlankScreen("BBB")
+    }
+  }
+
   override def render(): ReactElement = {
-//    BlankScreen("AAA")
     NavigationContainer(
       TabNavigator(
-        TabScreen(name = "AAAA", component = BlankScreen("AAAA"))
+        TabScreen(name = "AAA", component = Wrapper1.component),
+        TabScreen(name = "BBB", component = Wrapper2.component)
       )
     )
   }

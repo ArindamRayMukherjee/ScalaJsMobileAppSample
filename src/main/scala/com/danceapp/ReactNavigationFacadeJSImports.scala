@@ -16,7 +16,7 @@ object ReactNavigationFacadeJSImports {
 
   object TabNavigator extends ExternalComponentNoProps {
     @js.native
-    @JSImport("../../../js/react-navigation/Navigator", "TabNavigator")
+    @JSImport("../../js/react-navigation/Navigator", "TabNavigator")
     object TabNavigatorImport extends js.Object
     override val component = TabNavigatorImport
   }
@@ -24,7 +24,7 @@ object ReactNavigationFacadeJSImports {
   @react object TabScreen extends ExternalComponent {
     case class Props(name: String, component: ReactComponentClass[_])
     @js.native
-    @JSImport("../../../js/react-navigation/Navigator", "TabScreen")
+    @JSImport("../../js/react-navigation/Navigator", "TabScreen")
     object TabScreenImport extends js.Object
 
     override val component = TabScreenImport
