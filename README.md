@@ -1,7 +1,9 @@
 ## Building and running
 
 ### Building the app
-Once you've created your project, first compile your Scala code to JavaScript by running the following in the sbt shell
+Once you've created your project :
+Firstly, install all the JS/TS dependencies with `yarn`
+Secondly compile your Scala code to JavaScript by running the following in the sbt shell
 ```
 > clean; fullLinkJS
 ```
