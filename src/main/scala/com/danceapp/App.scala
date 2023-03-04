@@ -1,6 +1,5 @@
 package com.danceapp
 
-import com.danceapp.ReactNavigationFacadeJSImports.{NavigationContainer, TabNavigator, TabScreen}
 import slinky.core._
 import slinky.core.annotations.react
 import slinky.native._
@@ -23,24 +22,27 @@ import slinky.core.facade.ReactElement
     alignItems = "center"
   )
 
-  @react object Wrapper1 {
-    val component = FunctionalComponent[Unit] { _ =>
-      BlankScreen("AAA")
-    }
-  }
-  @react object Wrapper2 {
-    val component = FunctionalComponent[Unit] { _ =>
-      BlankScreen("BBB")
-    }
-  }
-
   override def render(): ReactElement = {
-    NavigationContainer(
-      TabNavigator(
-        TabScreen(name = "AAA", component = Wrapper1.component),
-        TabScreen(name = "BBB", component = Wrapper2.component)
-      )
-    )
+    BlankScreen("Allo Matey!")
+//    View(
+//      style = baseStyle
+//    )(
+//      Image(
+//        source = ImageURISource(
+//          uri = "https://raw.githubusercontent.com/shadaj/slinky/master/logo.png"
+//        ),
+//        style = literal(
+//          width = 250,
+//          height = 250,
+//          borderRadius = 250 / 2
+//        ),
+//        resizeMode = "cover"
+//      ),
+//      Text(
+//        style = literal(fontSize = 30, color = "red")
+//      )(s"Hello, Slinky!")
+//    )
+
   }
 
 }

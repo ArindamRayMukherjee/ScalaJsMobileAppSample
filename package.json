@@ -4,15 +4,13 @@
   "private": true,
   "scripts": {
     "clean": "rm -fr yarn.lock node_modules ios/Podfile.lock",
-    "android": "react-native run-android",
-    "ios": "cd ios && rm -f Podfile.lock && pod install && cd .. && react-native run-ios",
+    "android": "rm -rf android/.gradle && rm -rf android/app/build && react-native run-android",
+    "androidQ": "react-native run-android",
+    "ios": "cd ios && rm -f Podfile.lock && pod repo update && pod install && cd .. && react-native run-ios",
+    "iosQ": "react-native run-ios",
     "stop": "ps aux | grep 'react-native' | grep -v 'grep' | awk '{print $2}' | xargs kill -9"
   },
   "dependencies": {
-    "@react-native-masked-view/masked-view": "^0.2.8",
-    "@react-navigation/elements": "^1.3.14",
-    "@react-navigation/material-bottom-tabs": "^6.2.12",
-    "@react-navigation/native": "^6.1.3",
     "react": "18.2.0",
     "react-native": "0.71.2",
     "react-native-fbsdk-next": "11.1.0",
