@@ -1,25 +1,24 @@
-## Building Apps
-Once you've created your project, first compile your Scala code to JavaScript by running
+## Building and running
+
+### Building the app
+Once you've created your project, first compile your Scala code to JavaScript by running the following in the sbt shell
 ```
-$ sbt clean fastOptJS
+> clean; fullLinkJS
 ```
+or on the command line
+```
+$ sbt clean fullLinkJS
+```
+Use `fastLinkJS` below for a debug build (also enable some commented code in App.js)
 IMP: this might refresh new react components but will not refresh new code written inside functions 
 behind existing react components. Use the yarn commands below to stop and redeploy to ios/android 
 
-## Stopping and running
+### Stopping and running
 `yarn stop`
 
-`yarn ios`
+`yarn iosQ` for deploying without rebuilding the ios pods or `yarn ios` with a full rebuild
 
 `yarn android`
 
-## Cleaning
+### Cleaning
 `yarn clean`
-
-## Production Bundles
-To create a minified app, first build an optimized Scala.js bundle
-```
-$ sbt fullOptJS
-```
-
-Then, go to `App.js` and uncomment `app = require("./target/scala-2.13/app-opt.js").app;` in order to enable the production bundle.
